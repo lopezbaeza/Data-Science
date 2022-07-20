@@ -1,3 +1,5 @@
+
+
 # EJERCICIO 1
 
 """
@@ -22,6 +24,9 @@ def pide_input(texto):
         except: print("Un número entero")
         
     return numero
+
+
+print("EJERCICIO 1 - Mayor?")
 
 x=pide_input("Introduce número...")
 y=pide_input("Introduce número...")
@@ -68,6 +73,8 @@ def pide_input(texto):
         
     return numero
 
+print("EJERCICIO 2 mayor de tres")
+
 x=pide_input("Introduce número...")
 y=pide_input("Introduce número...")
 z=pide_input("Introduce número...")
@@ -106,6 +113,9 @@ def pide_input(texto):
         
     return entrada
 
+
+print("EJERCICIO 3 contar letras")
+
 x=pide_input("Introduce Texto...")
 
 cuenta_palabras(x)
@@ -133,7 +143,9 @@ def pide_input(texto):
         
     return entrada
 
-x=pide_input("Introduce Texto...").upper()
+print("EJERCICIO 4 Es vocal?")
+
+x=pide_input("Introduce letra...").upper()
 
 if saca_vocal(x):
     print("Si")
@@ -158,6 +170,8 @@ def multip(lista):
     return multiplicacion
 
 lista=[1,2,3,4]
+
+print("EJERCICIO 5 suma y mult de ",lista)
 
 print(f"La suma es {sum(lista)}")
 print(f"La multiplicación  es {multip(lista)}")
