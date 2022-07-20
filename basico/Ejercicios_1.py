@@ -4,3 +4,5 @@
     
     notas=-3
     print(notas)
+    
+#EJERCICIO 2
