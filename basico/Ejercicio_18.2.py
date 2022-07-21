@@ -1,5 +1,4 @@
 #2)Definir una función max_de_tres(), que tome tres números como argumentos y devuelva el mayor de ellos.
-import numpy as np
 
 def max_de_tres(num1,num2,num3):
     if num1==num2==num3:
