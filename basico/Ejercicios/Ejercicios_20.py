@@ -3,6 +3,8 @@
     realiza los siguientes ejercicios
 """
 
+import os
+
 # EJERCICIO 1
 print("------------------------------------")
 """
@@ -20,11 +22,6 @@ def generar_n_caracteres(n, caracter):
         #frase +=caracter
         n-=1
     return frase
-
-car="w"
-veces=7
-print(f"Entrada {car} {veces} veces")
-print(generar_n_caracteres(veces,car))
 
 # EJERCICIO 2
 print("------------------------------------")
@@ -52,10 +49,6 @@ def procedimiento(lista):
         print(acum)
         acum=""
 
-lista=[4,9,2]
-
-print("Entrada ",lista)
-procedimiento(lista)
 
 # EJERCICIO 3
 print("------------------------------------")
@@ -74,12 +67,6 @@ def mas_larga(lista):
     
     return masalta
 
-lista=["Benemérita","Torquemada","Benalmádena","Sabiñánigo","Nicomedes","Ataúlfo","Perogrullo",
-       "Botarate","Barbitúrico","Arcoseno","Circunloquio","Atapuerca","Sopicaldo","Panacea","Condolencia"
-       ]
-
-print(lista)
-print("la palabra más larga es ",mas_larga(lista))
 
 # EJERCICIO 4
 print("------------------------------------")
@@ -97,11 +84,6 @@ def filtrar_palabras(lista, n):
             lista_result.append(palabra)
     return lista_result
 
-
-veces=8
-print(f"Entrada máx de {veces} caracteres en {lista}")
-print(filtrar_palabras(lista,veces))
-
 # EJERCICIO 5
 print("------------------------------------")
 """
@@ -113,22 +95,13 @@ def c_mayusculas(cadena):
     # TODO: ingrese una cadena de texto
     # TODO:evaluar la cadena
     # TODO: returnar cuantas letras mayúsculas tiene
-    cont_may=0;
-    cont_min=0;
-    cadena2=""
-    cadena2.islower()
+    cont_may=0
+    cont_min=0
     for letra in range(len(cadena)):
         if cadena[letra].isupper():
             cont_may+=1
         else:cont_min+=1
     return cont_may, cont_min
-
-texto="CircunloquioEscalopeMerendola"
-mayusculas, minusculas = c_mayusculas(texto)
-print("Palabra ",texto)
-print("Número de mayúsculas ",mayusculas)
-print("Número de minúsculas ",minusculas)
-print(len(texto))
 
 # EJERCICIO 6
 print("------------------------------------")
@@ -149,10 +122,6 @@ def mayores(tup):
             lista.append(tup[cont])
         cont+=1
     return lista    
-tupla=(21,34,92,1,22,19,5,9,13,67)
-
-print(f"Entrada {tupla} sacar los mayores de 20")
-print(mayores(tupla))
 
 # EJERCICIO 7
 print("------------------------------------")
@@ -174,11 +143,6 @@ def cuenta_empiezan_por(lista,car):
             cont+=1
     return cont
         
-lista_nombres=["Ataulfo","Nicomedes","Javier","Julián","Aneto","Armando","Amando","Pepe","Zaratustra","Belén","Carmen","Julia"]
-print(lista_nombres)
-letra=input("Introduce letra de comienzo de los nombres: ")
-print(f"Hay {cuenta_empiezan_por(lista_nombres,letra)} nombres de la lista que empiezan por {letra}")
-
 # EJERCICIO 8
 print("------------------------------------")
 """
@@ -191,7 +155,7 @@ print("------------------------------------")
 def contar_vocales(cadena):
     # TODO: recibir una palabra
     # TODO: contabilizar cuantas letras tiene de "a"
-    # TODO: contabilizar cuantas letras tiene de "e"
+    # TODO: conta1bilizar cuantas letras tiene de "e"
     # TODO: contabilizar cuantas letras tiene de "i"
     # TODO: contabilizar cuantas letras tiene de "o"
     # TODO: contabilizar cuantas letras tiene de "u"
@@ -219,12 +183,121 @@ def contar_vocales(cadena):
             else: contu+=1
     
     return conta,conte,conti,conto,contu  
-palabra=input("Introduce palabra y te contaré las vocales")
 
-conta,conte,conti,conto,contu = contar_vocales(palabra.lower())
+borrarPantalla=lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
-print(f"Tiene {conta} veces la letra a")
-print(f"Tiene {conte} veces la letra e")
-print(f"Tiene {conti} veces la letra i")
-print(f"Tiene {conto} veces la letra o")
-print(f"Tiene {contu} veces la letra u")
+def funcion_menu():
+    while True:
+        borrarPantalla()
+        print("\n")
+        print("*********************** MENU *****************************")
+        print("******************** EJERCICIOS **************************")
+        print("***** 1. 'N' veces un caracter ***************************")
+        print("***** 2. Filas de '*' en función de lista ****************")
+        print("***** 3. Sacar palabra más larga de una lista ************")
+        print("***** 4. Sacar palabras de lista con más de 'N' palabras *")
+        print("***** 5. Sacar núm de mayúsulas y minúsculas en frase ****")       
+        print("***** 6. Sacar edades superiores a 20 de Tupla ***********")
+        print("***** 7. Sacar nombres de lista que empiecen por letra ***")
+        print("***** 8  Contar vocales en frase**************************")
+        print("***** 99. Salir (del menú) *******************************")
+        print("**********************************************************")
+        print("\n")
+        
+        opcion = int(input("Inserte su opción: "))
+        
+        if opcion == 1:            
+            car=input("Introduce caracter a repetir: ")
+            veces=int(input("Introduce número de veces a repetir el caracter: "))
+            
+            print(f"Entrada {car} {veces} veces")
+            print(generar_n_caracteres(veces,car))
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 2:            
+            lista=[4,9,2]
+
+            print("Ejemplo entrada ",lista)
+            lista.clear()
+            while True:
+                try:
+                    lista.append(int(input("Introduce número, y una letra para acabar: ")))
+                except:
+                    break
+                
+            procedimiento(lista)
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 3:
+            lista=["Benemérita","Torquemada","Benalmádena","Sabiñánigo","Nicomedes","Ataúlfo","Perogrullo",
+                   "Botarate","Barbitúrico","Arcoseno","Circunloquio","Atapuerca","Sopicaldo","Panacea","Condolencia"
+            ]
+
+            print(lista)
+            print("La palabra más larga es ",mas_larga(lista))
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 4:            
+            veces=int(input("Introduce número de caracteres: "))
+            
+            print(f"Palabras con más de {veces} caracteres en {lista}")
+            print(filtrar_palabras(lista,veces))
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 5:            
+            ejem="CircunloquioEscalopeMerendola"
+            
+            texto=input("Introduce frase, palabra... ejemplo: "+ejem+ " ")
+            
+            mayusculas, minusculas = c_mayusculas(texto)
+            
+            print("Palabra ",texto)
+            print("Número de mayúsculas ",mayusculas)
+            print("Número de minúsculas ",minusculas)
+            
+            print(f"Long texto: {len(texto)}")
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 6:
+            tupla=(21,34,92,1,22,19,5,9,13,67)
+
+            print(f"Entrada {tupla} sacar los mayores de 20")
+            print(mayores(tupla))
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 7:
+            lista_nombres=["Ataulfo","Nicomedes","Javier","Julián","Aneto","Anapurna","Ak42","Pepe","Zaratustra","Belén","Carmen","Julia"]
+            print("Ejemplos nombres para CTRL + C: ")
+            print(lista_nombres)
+            
+            numero=int(input("Introduce número de palabras que vas a analizar: "))
+            lista_nombres.clear()
+
+            for i in range(numero):
+                lista_nombres.append(input("Introduce Nombre: "))
+                
+            letra=input("Introduce letra de comienzo de los nombres: ")
+            
+            print(f"Hay {cuenta_empiezan_por(lista_nombres,letra)} nombres de la lista que empiezan por {letra}")
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 8:
+            palabra=input("Introduce palabra y te contaré las vocales: ")
+
+            conta,conte,conti,conto,contu = contar_vocales(palabra.lower())
+
+            print(f"Tiene {conta} veces la letra a")
+            print(f"Tiene {conte} veces la letra e")
+            print(f"Tiene {conti} veces la letra i")
+            print(f"Tiene {conto} veces la letra o")
+            print(f"Tiene {contu} veces la letra u")
+            
+            click=input("Pulsa para continuar...")
+        elif opcion == 99:
+            break
+        else:
+            print("por favor, escriba una opción correcta. ")
+            print("\n")
+            
+funcion_menu()
+print("Enhorabuena acabaste los ejercicios")
