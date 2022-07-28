@@ -124,6 +124,8 @@ def fun_recalifica(dicc):
     lista_asignaturas=[]
     lista_notas=[]
     for key,value in dicc.items():
+        #Aqui mejor voy rellenando un dicc que me declaro vacio
+        #dicc[key.upper()]=value
         lista_asignaturas.append(key.upper())
         lista_notas.append(value)
         
@@ -143,7 +145,7 @@ def fun_recalifica(dicc):
 
 def funcion_cosas_de_ficheros(fun):
     
-    if fun==1:
+    if fun==0:
         f = open(settings.MEDIA_ROOT + "password.txt", "r")
         linea=f.readline()
         f.close()
@@ -156,7 +158,7 @@ def funcion_cosas_de_ficheros(fun):
     
 def fun_password(password):#password
     
-    if password.lower()==funcion_cosas_de_ficheros(1).lower():
+    if password.lower()==funcion_cosas_de_ficheros(0).lower():
         print("Contraseña correcta, está ustéd validado")
         return True
     else: 
@@ -228,7 +230,7 @@ def funcion_menu():
         elif opcion == 6: 
             borrarPantalla()
             
-            funcion_cosas_de_ficheros(2)
+            funcion_cosas_de_ficheros(1)
             
             while True:
                 if fun_password(input("Introduce contraseña a comprobar: ")):
