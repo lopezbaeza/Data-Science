@@ -3,5 +3,6 @@
 
 env/
 basico/__pycache__/
+basico/Ejercicios/__pycache__/
 Tests/__pycache__/
 Tests/Carpeta_Secundaria/__pycache__/

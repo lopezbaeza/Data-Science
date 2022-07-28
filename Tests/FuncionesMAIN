@@ -1,0 +1,45 @@
+import math
+
+class Triangulo:
+    
+    def __init__(self,cateto1,cateto2):
+        self.cateto1=cateto1
+        self.cateto2=cateto2
+        
+    def calcular(self):
+        hipotenusa=math.sqrt(self.cateto1**2 + self.cateto2**2)
+        print(hipotenusa)
+        
+triangulo1=Triangulo(3,4)
+triangulo2=Triangulo(4,6)
+
+triangulo1.calcular()
+
+triangulo2.calcular()
+
+#Lo mismo pero con main
+
+import math
+
+class Triangulo2:
+    
+    def __init__(self,cateto1,cateto2):
+        self.cateto1=cateto1
+        self.cateto2=cateto2
+        
+    def calcular(self):
+        hipotenusa=math.sqrt(self.cateto1**2 + self.cateto2**2)
+        print(hipotenusa)
+        
+    def main():
+        # numero es el resultado de esa clase para:
+        # cateto1 = 3
+        # cateto2 = 4
+        # ES EL OBJETO
+        triangulo1 = Triangulo2(3, 4)
+        triangulo1.calculo()
+    
+# el main:
+if __name__== "__main__":
+    main()
+    
