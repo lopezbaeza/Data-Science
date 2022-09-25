@@ -78,9 +78,12 @@ def fun_telefono():
         telefono=input("Introduce número teléfono completo, formato (+34-913724710-56): ")
         try:
             sin_prefijos=telefono.split("-")
-            break
+            if len(sin_prefijos)>2:
+                break
+            else: 
+                print("Formato (+34-913724710-56)")
         except:
-            input("Formato (+34-913724710-56): ")
+            print("Formato (+34-913724710-56)")
             
     print(sin_prefijos[1])
        
@@ -105,7 +108,7 @@ def fun_vocal_may():
         if frase[letra].lower()==vocal.lower():
             nueva+=vocal.upper()
         else: nueva+=frase[letra]
-            
+    #Mucho mejor frase.replace()
     print(nueva)
        
 #
@@ -210,7 +213,7 @@ def fun_notas():
     notas=[]
     
     for asigantura in asignaturas:
-        notas.append(float(input(f"Introduce nota de {asigantura}")))
+        notas.append(float(input(f"Introduce nota de {asigantura} ")))
         
     for asignatura in range(len(asignaturas)):
         print(f"Has sacado {asignaturas[asignatura]} la nota de {notas[asignatura]}")
@@ -225,7 +228,7 @@ borrarPantalla=lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 def funcion_menu():
     while True:
         #C:\Users\Matusaleno\Documents\Apuntes\Curso Data Science\Ejercicios\Míos\Dataset\git_test\Data-Science\media
-        print("\n")
+        borrarPantalla()
         print("*************************** MENU **************************")
         print("************************ EJERCICIOS ***********************")
         print("***** 1. EJERCICIO 1 **************************************")
@@ -256,48 +259,60 @@ def funcion_menu():
             print("Edad de ",alumno3.nombre," es ", alumno3.edad)
             print("Nota de ",alumno3.nombre," es ", alumno3.nota)
             
+            click=input("Press to continue...")
         elif opcion == 2: 
-            borrarPantalla()
-            
+                             
+            alumno1=Alumnos("Marciano",34,"Matemáticas",8.9)
             años=int(input("¿Edad? "))
             fun_años_cumplidos(años)
             print("----------")
             fun_años_cumplidos(alumno1.edad)
+            
+            click=input("Press to continue...")
         elif opcion == 3: 
-            borrarPantalla() 
             
             fun_reves()
+            
+            click=input("Press to continue...")
         elif opcion == 4:   
-            borrarPantalla()
             
             fun_nombre() 
+            
+            click=input("Press to continue...")
         elif opcion == 5: 
-            borrarPantalla()
             
             fun_telefono() 
+            
+            click=input("Press to continue...")
         elif opcion == 6: 
-            borrarPantalla()
             
             fun_vocal_may()
+            
+            click=input("Press to continue...")
         elif opcion == 7:
-            borrarPantalla()
             
             fun_leuros1()
             fun_leuros2()
             fun_leuros3()
+            
+            click=input("Press to continue...")
         elif opcion == 8: 
-            borrarPantalla()
             
             print(fun_crea_df())
+            
+            click=input("Press to continue...")
         elif opcion == 9:
-            borrarPantalla()
+            
             Mes=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
         
             print(fun_balance(fun_crea_df(),Mes))
+            
+            click=input("Press to continue...")
         elif opcion == 10: 
-            borrarPantalla()
             
             fun_notas()
+            
+            click=input("Press to continue...")
         elif opcion == 99:
             break
         else:

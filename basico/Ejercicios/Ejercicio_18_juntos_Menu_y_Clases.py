@@ -26,10 +26,10 @@ class Ejercicio1:
     def fun_ejercicio1():
         print("EJERCICIO 1 - Mayor?")
 
-        x=Ejercicio1.pide_input("Introduce número...")
-        y=Ejercicio1.pide_input("Introduce número...")
+        x=Ejercicio1.pide_input("Introduce primer número...")
+        y=Ejercicio1.pide_input("Introduce segundo número...")
 
-        print(f"El número mayor es {Ejercicio1.max(x,y)}")
+        print(f"El número mayor es: {Ejercicio1.max(x,y)}")
 
 # EJERCICIO 2
 
@@ -74,9 +74,9 @@ class Ejercicio2:
     def fun_ejercicio2():
         print("EJERCICIO 2 mayor de tres")
 
-        x=Ejercicio2.pide_input("Introduce número...")
-        y=Ejercicio2.pide_input("Introduce número...")
-        z=Ejercicio2.pide_input("Introduce número...")
+        x=Ejercicio2.pide_input("Introduce primer número...")
+        y=Ejercicio2.pide_input("Introduce segundo número...")
+        z=Ejercicio2.pide_input("Introduce tercer número...")
 
         print(f"El número mayor es {Ejercicio2.max_de_tres(x,y,z)}")
 
@@ -119,17 +119,17 @@ class Ejercicio3:
 
         Ejercicio3.cuenta_palabras(x)
 
-        print(f"El número de letras con fun 2 es {Ejercicio3.cuenta_palabras_v2(x)}")
+        print(f"El número de caracteres de ' {x} ' con fun 2 es {Ejercicio3.cuenta_palabras_v2(x)}")
 
         lista=[3,5,8,0,1,234,546,789,2]
         Ejercicio3.cuenta_palabras(lista)
 
-        print(f"El número de letras con fun 2 es {Ejercicio3.cuenta_palabras_v2(lista)}")
+        print(f"El número de caracteres de '{lista}' con fun 2 es {Ejercicio3.cuenta_palabras_v2(lista)}")
 
 # EJERCICIO 4
 class Ejercicio4:
     def saca_vocal(texto):
-        vocales=["A","E","I","O","U"]
+        vocales=["A","E","I","O","U","Á","É","Í","Ó","Ú"]
         
         return texto in vocales 
 
@@ -178,9 +178,15 @@ class Ejercicio5:
         print(f"La suma es {Ejercicio5.sum(lista)}")
         print(f"La multiplicación  es {Ejercicio5.multip(lista)}")
 
+import os
+
+borrarPantalla=lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+
+
 def funcion_menu():
     while True:
-        print("\n")
+        #C:\Users\Matusaleno\Documents\Apuntes\Curso Data Science\Ejercicios\Míos\Dataset\git_test\Data-Science\media
+        borrarPantalla()
         print("**************** MENU *******************")
         print("************** EJERCICIOS ***************")
         print("***** 1. Mayor entre dos números ********")
@@ -196,14 +202,24 @@ def funcion_menu():
         
         if opcion == 1:
             Ejercicio1.fun_ejercicio1()
+                        
+            click=input("Press to continue...")
         elif opcion == 2:
             Ejercicio2.fun_ejercicio2()
+                        
+            click=input("Press to continue...")
         elif opcion == 3:
             Ejercicio3.fun_ejercicio3()
+                        
+            click=input("Press to continue...")
         elif opcion == 4:
             Ejercicio4.fun_ejercicio4()
+                        
+            click=input("Press to continue...")
         elif opcion == 5:
             Ejercicio5.fun_ejercicio5()
+                        
+            click=input("Press to continue...")
         elif opcion == 99:
             break
         else:

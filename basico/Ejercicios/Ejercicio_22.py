@@ -167,10 +167,11 @@ def fun_password(password):#password
     
 borrarPantalla=lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
+
 def funcion_menu():
     while True:
         #C:\Users\Matusaleno\Documents\Apuntes\Curso Data Science\Ejercicios\Míos\Dataset\git_test\Data-Science\media
-        print("\n")
+        borrarPantalla()
         print("*************************** MENU **************************")
         print("************************ EJERCICIOS ***********************")
         print("***** 1. Descuentos, IVAs... ******************************")
@@ -186,7 +187,6 @@ def funcion_menu():
         opcion = int(input("Inserte su opción: "))
         
         if opcion == 1:   
-            borrarPantalla()
             
             diccionario={1000:20, 500:10, 100:12}
             
@@ -204,37 +204,43 @@ def funcion_menu():
             print(apply_IVA(1000, 20))
             print(apply_IVA(500, 10))
             print(apply_IVA(100, 12))
+            
+            click=input("Press to continue...")
         elif opcion == 2: 
-            borrarPantalla()
             
             listaentrada=[2,4,6,8,88,1,3,23]
 
             print(f"Lista inicial: {listaentrada} \n resulado: {aplica_funcion_lista(cuadrado,listaentrada)}")
+            
+            click=input("Press to continue...")
         elif opcion == 3: 
-            borrarPantalla() 
             
             print(funcion_crea_diccionario("Hola mundo"))
+            
+            click=input("Press to continue...")
         elif opcion == 4:   
-            borrarPantalla()
             
             lista_notas=[0,3,4.9,5.5,5,6,6.8,7.9,8.4,8.5,9,10,11]
             
             print(f"Lista inicial: {lista_notas} \n resulado: {funcion_calificación(lista_notas)}")
+            
+            click=input("Press to continue...")
         elif opcion == 5: 
-            borrarPantalla()
             
             diccionario_notas={"Matemáticas":8, "Ciencias Naturales":6,"Lenguaje":4,"Educación Física":8.6,"Física y Química":5.9,"Religión":3}
             
             print(f"Diccionario inicial: {diccionario_notas} \n resulado: {fun_recalifica(diccionario_notas)}")
             
+            click=input("Press to continue...")
         elif opcion == 6: 
-            borrarPantalla()
             
             funcion_cosas_de_ficheros(1)
             
             while True:
                 if fun_password(input("Introduce contraseña a comprobar: ")):
                     break
+                        
+            click=input("Press to continue...")
         elif opcion == 99:
             break
         else:

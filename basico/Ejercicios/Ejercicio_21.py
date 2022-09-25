@@ -123,7 +123,7 @@ borrarPantalla=lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 def funcion_menu():
     while True:
         
-        print("\n")
+        borrarPantalla()
         print("******************* MENU *******************")
         print("**************** EJERCICIOS ****************")
         print("***** 1. Detector de Años Bisiestos ********")
@@ -136,14 +136,17 @@ def funcion_menu():
         opcion = int(input("Inserte su opción: "))
         
         if opcion == 1:   
-            borrarPantalla()
             Ejercicio1.mostrar()
+            
+            click=input("Press to continue...")
         elif opcion == 2: 
-            borrarPantalla()
             Ejercicio2.mostrar()
+            
+            click=input("Press to continue...")
         elif opcion == 3: 
-            borrarPantalla()
             VideoClubVHS.mostrar()
+            
+            click=input("Press to continue...")
         elif opcion == 99:
             break
         else:

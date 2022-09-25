@@ -266,8 +266,8 @@ def funcion_menu():
             
             click=input("Pulsa para continuar...")
         elif opcion == 7:
-            lista_nombres=["Ataulfo","Nicomedes","Javier","Julián","Aneto","Anapurna","Ak42","Pepe","Zaratustra","Belén","Carmen","Julia"]
-            print("Ejemplos nombres para CTRL + C: ")
+            lista_nombres=["Ataulfo","Nicomedes","Javier","Julián","Aneto","Anapurna","Ak47","Pepe","Zaratustra","Belén","Carmen","Julia"]
+            print("Ejemplos nombres para ")
             print(lista_nombres)
             
             numero=int(input("Introduce número de palabras que vas a analizar: "))
