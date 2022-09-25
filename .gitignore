@@ -1,0 +1,8 @@
+#Este archivo ignora para git los archivos de las carpetas que le indiques
+#en teoría con este archivo se ignoran unos archivos que salen al invocarse entre clases
+
+env/
+basico/__pycache__/
+basico/Ejercicios/__pycache__/
+Tests/__pycache__/
+Tests/Carpeta_Secundaria/__pycache__/
